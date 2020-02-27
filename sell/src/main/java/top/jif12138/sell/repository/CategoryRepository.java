@@ -5,7 +5,7 @@ import top.jif12138.sell.dataobject.ProductCategory;
 
 import java.util.List;
 
-public interface ProductCategoryRepository extends JpaRepository <ProductCategory,Integer>{
+public interface CategoryRepository extends JpaRepository <ProductCategory,Integer>{
 
     List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTYPElIST);
 

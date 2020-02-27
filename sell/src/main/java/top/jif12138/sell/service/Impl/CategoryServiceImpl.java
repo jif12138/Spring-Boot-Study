@@ -3,8 +3,8 @@ package top.jif12138.sell.service.Impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.jif12138.sell.dataobject.ProductCategory;
-import top.jif12138.sell.repository.ProductCategoryRepository;
-import top.jif12138.sell.service.ProductCategoryService;
+import top.jif12138.sell.repository.CategoryRepository;
+import top.jif12138.sell.service.CategoryService;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import java.util.List;
  *类目
  */
 @Service
-public class ProductCategoryServiceImpl implements ProductCategoryService {
+public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
-    private ProductCategoryRepository repository;
+    private CategoryRepository repository;
 
     @Override
     public ProductCategory findOne(Integer categoryId) {

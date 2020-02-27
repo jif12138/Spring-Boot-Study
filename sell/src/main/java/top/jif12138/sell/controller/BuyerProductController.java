@@ -1,6 +1,5 @@
 package top.jif12138.sell.controller;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -13,14 +12,11 @@ import top.jif12138.sell.ViewObject.ProductVO;
 import top.jif12138.sell.ViewObject.ResultVO;
 import top.jif12138.sell.dataobject.ProductCategory;
 import top.jif12138.sell.dataobject.ProductInfo;
-import top.jif12138.sell.service.ProductCategoryService;
+import top.jif12138.sell.service.CategoryService;
 import top.jif12138.sell.service.ProductInfoService;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/buyer/product")
@@ -32,7 +28,7 @@ public class BuyerProductController {
     private ProductInfoService productInfoService;
 
     @Autowired
-    private ProductCategoryService productCategoryService;
+    private CategoryService categoryService;
 
     @GetMapping("/list")
     public ResultVO list() {
@@ -50,7 +46,7 @@ public class BuyerProductController {
 //        productCategoryTypeList = productInfoList.stream()
 //                .map(e -> e.getCategoryType())
 //                .collect(Collectors.toList());
-        List<ProductCategory> productCategoryList = productCategoryService.findByCategoryTypeIn(productCategoryTypeList);
+        List<ProductCategory> productCategoryList = categoryService.findByCategoryTypeIn(productCategoryTypeList);
 
         //3. 数据拼装
         List<ProductVO> productVOList = new ArrayList<>();

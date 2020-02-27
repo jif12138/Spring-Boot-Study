@@ -7,7 +7,7 @@ import top.jif12138.sell.dataobject.ProductCategory;
 import java.util.List;
 
 
-public interface ProductCategoryService {
+public interface CategoryService {
 
     ProductCategory findOne(Integer id);
 
