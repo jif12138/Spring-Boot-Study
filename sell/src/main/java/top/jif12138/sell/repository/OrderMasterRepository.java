@@ -5,7 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import top.jif12138.sell.dataobject.OrderMaster;
 
-public interface OrderMasterRepository extends JpaRepository<OrderMaster, Integer> {
+public interface OrderMasterRepository extends JpaRepository<OrderMaster, String> {
     Page<OrderMaster> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
 
 }

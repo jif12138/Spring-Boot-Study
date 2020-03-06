@@ -1,4 +1,4 @@
-package top.jif12138.sell.service.Impl;
+package top.jif12138.sell.service.impl;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,8 +14,6 @@ import top.jif12138.sell.service.ProductInfoService;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -34,6 +32,7 @@ public class ProductInfoServiceImplTest {
     @Test
     public void findUpAll() {
         List<ProductInfo> productInfoList = productInfoService.findUpAll();
+        System.out.println(productInfoList.size());
         Assert.assertNotEquals(0, productInfoList.size());
     }
 
@@ -42,7 +41,7 @@ public class ProductInfoServiceImplTest {
         PageRequest request = PageRequest.of(0, 2);
         Page<ProductInfo> productInfoPage = productInfoService.findAll(request);
         System.out.println(productInfoPage.getTotalElements());
-        Assert.assertNotEquals(0,productInfoPage.getTotalElements());
+        Assert.assertNotEquals(0, productInfoPage.getTotalElements());
 
     }
 

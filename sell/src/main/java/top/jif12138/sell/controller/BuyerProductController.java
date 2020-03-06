@@ -46,6 +46,7 @@ public class BuyerProductController {
 //        productCategoryTypeList = productInfoList.stream()
 //                .map(e -> e.getCategoryType())
 //                .collect(Collectors.toList());
+
         List<ProductCategory> productCategoryList = categoryService.findByCategoryTypeIn(productCategoryTypeList);
 
         //3. 数据拼装
@@ -66,7 +67,9 @@ public class BuyerProductController {
             ProductVO productVO = new ProductVO(productCategory.getCategoryName(), productCategory.getCategoryType(), productInfoVOList);
             productVOList.add(productVO);
         }
-        ResultVO resultVO = new ResultVO(0, "成功", productVOList);
+        System.out.println("productVOList.size="+productVOList.size());
+        ResultVO resultVO = new ResultVO(0, "成功!", productVOList);
+        resultVO.setData(productVOList);
         return resultVO;
     }
 }

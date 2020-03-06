@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import top.jif12138.sell.dataobject.ProductCategory;
 import top.jif12138.sell.dataobject.ProductInfo;
+import top.jif12138.sell.dto.CartDTO;
 
 import java.util.List;
 
@@ -12,21 +13,30 @@ import java.util.List;
  */
 public interface ProductInfoService {
 
-    ProductInfo findOne(String productID);
+
+    ProductInfo findOne(String productId);
 
     /**
-     * 查询所有在架商品
+     * 查询所有在架商品列表
+     *
      * @return
      */
     List<ProductInfo> findUpAll();
 
-    Page<ProductInfo> findAll(Pageable pageable );
+    Page<ProductInfo> findAll(Pageable pageable);
 
     ProductInfo save(ProductInfo productInfo);
 
     //加库存
-    //todo
+    void increaseStock(List<CartDTO> cartDTOList);
 
     //减库存
-    //todo
+    void decreaseStock(List<CartDTO> cartDTOList);
+
+    //上架
+    ProductInfo onSale(String productId);
+
+    //下架
+    ProductInfo offSale(String productId);
 }
+

@@ -1,6 +1,7 @@
 package top.jif12138.sell.dataobject;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 @Data
+@DynamicUpdate // 自动更新update time
 public class OrderDetail {
 
     @Id

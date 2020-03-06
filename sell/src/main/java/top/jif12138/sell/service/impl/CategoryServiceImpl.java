@@ -1,4 +1,4 @@
-package top.jif12138.sell.service.Impl;
+package top.jif12138.sell.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

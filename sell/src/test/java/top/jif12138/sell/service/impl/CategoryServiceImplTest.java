@@ -1,4 +1,4 @@
-package top.jif12138.sell.service.Impl;
+package top.jif12138.sell.service.impl;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -36,7 +36,12 @@ public class CategoryServiceImplTest {
     @Test
     public void findByCategoryTypeIn() {
 
-        List<ProductCategory> productCategoryList = productCategoryService.findByCategoryTypeIn(Arrays.asList(2, 3, 4));
+        List<ProductCategory> productCategoryList = productCategoryService.findByCategoryTypeIn(Arrays.asList(2, 4));
+        System.out.println("size==" + productCategoryList.size());
+        for (ProductCategory productCategory : productCategoryList) {
+            System.out.println(productCategory.toString());
+        }
+
         Assert.assertNotEquals(0, productCategoryList.size());
     }
 

@@ -10,7 +10,6 @@ public enum PayStatusEnum {
     private Integer code;
     private String message;
 
-    //todo
     PayStatusEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
